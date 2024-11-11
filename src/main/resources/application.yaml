@@ -1,0 +1,45 @@
+quarkus:
+    langchain4j:
+        log-requests: true
+        log-responses: true
+        gemma2:
+            chat-model:
+                provider: ollama
+        llama:
+            chat-model:
+                provider: ollama
+        mistral:
+            chat-model:
+                provider: ollama
+        googleT5Base:
+            chat-model:
+                provider: huggingface
+
+        ollama:
+            base-url: http://localhost:11434
+            timeout: 60s
+            gemma2:
+                chat-model:
+                    model-id: gemma2
+                    temperature: 1.0
+            llama:
+                chat-model:
+                    model-id: llama3.2:latest
+                    temperature: 1.0
+            mistral:
+                chat-model:
+                    model-id: mistral:latest
+                    temperature: 1.0
+        huggingface:
+            googleT5Base:
+                api-key: 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
+                chat-model:
+                    temperature: 1.0
+                    inference-endpoint-url: https://api-inference.huggingface.co/models/google-t5/t5-base
+                    max-new-tokens: 1000
+                    return-full-text: true
+                    wait-for-model: true
+
+
+    swagger-ui:
+        always-include: true

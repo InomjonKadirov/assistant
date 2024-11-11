@@ -20,8 +20,8 @@ dependencies {
 
     implementation("io.quarkiverse.langchain4j:quarkus-langchain4j-core:${langChain4jVersion}")
     implementation("io.quarkiverse.langchain4j:quarkus-langchain4j-ollama:${langChain4jVersion}")
-    implementation("io.quarkiverse.langchain4j:quarkus-langchain4j-mistral-ai:${langChain4jVersion}")
-    implementation("io.quarkiverse.langchain4j:quarkus-langchain4j-llama3-java:${langChain4jVersion}")
+    implementation("io.quarkiverse.langchain4j:quarkus-langchain4j-hugging-face:${langChain4jVersion}")
+//    implementation("io.quarkiverse.langchain4j:quarkus-langchain4j-llama3-java:${langChain4jVersion}")
 
 //    implementation("io.quarkiverse.langchain4j:quarkus-langchain4j-easy-rag:0.18.0")
 
@@ -35,6 +35,7 @@ dependencies {
 //    Swagger
     implementation("io.quarkus:quarkus-smallrye-openapi")
 
+    implementation("io.quarkus:quarkus-config-yaml")
     implementation("io.quarkus:quarkus-arc")
     implementation("io.quarkus:quarkus-rest")
     testImplementation("io.quarkus:quarkus-junit5")
