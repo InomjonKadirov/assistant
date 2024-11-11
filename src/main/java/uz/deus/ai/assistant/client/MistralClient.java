@@ -1,4 +1,4 @@
-package uz.deus.ai;
+package uz.deus.ai.assistant.client;
 
 import dev.langchain4j.service.SystemMessage;
 import dev.langchain4j.service.UserMessage;
@@ -19,11 +19,12 @@ import io.quarkiverse.langchain4j.RegisterAiService;
  *     }
  * }
  */
-@RegisterAiService // no need to declare a retrieval augmentor here, it is automatically generated and discovered
-public interface Bot {
+// no need to declare a retrieval augmentor here, it is automatically generated and discovered
+@RegisterAiService(modelName = "mistral")
+public interface MistralClient {
 
     @SystemMessage("""
-            You are an AI named Bob answering questions about financial products.
+            You are an AI named Octopus answering questions about financial products.
             Your response must be polite, use the same language as the question, and be relevant to the question.
 
             When you don't know, respond that you don't know the answer and the bank will contact the customer directly.

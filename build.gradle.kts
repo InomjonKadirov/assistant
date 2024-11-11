@@ -11,17 +11,32 @@ repositories {
 val quarkusPlatformGroupId: String by project
 val quarkusPlatformArtifactId: String by project
 val quarkusPlatformVersion: String by project
+val langChain4jVersion: String by project
+val lombokVersion: String by project
 
 dependencies {
+
     implementation(enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}"))
-    implementation("io.quarkiverse.langchain4j:quarkus-langchain4j-mistral-ai:0.18.0")
-    implementation("io.quarkiverse.langchain4j:quarkus-langchain4j-openai:0.18.0")
-    implementation("io.quarkiverse.langchain4j:quarkus-langchain4j-easy-rag:0.18.0")
-    implementation("io.quarkiverse.langchain4j:quarkus-langchain4j-core:0.18.0")
-    implementation("io.quarkus:quarkus-rest-client-reactive-jackson")
-    implementation("io.quarkiverse.langchain4j:quarkus-langchain4j-ollama:0.18.0")
+
+    implementation("io.quarkiverse.langchain4j:quarkus-langchain4j-core:${langChain4jVersion}")
+    implementation("io.quarkiverse.langchain4j:quarkus-langchain4j-ollama:${langChain4jVersion}")
+    implementation("io.quarkiverse.langchain4j:quarkus-langchain4j-mistral-ai:${langChain4jVersion}")
+    implementation("io.quarkiverse.langchain4j:quarkus-langchain4j-llama3-java:${langChain4jVersion}")
+
+//    implementation("io.quarkiverse.langchain4j:quarkus-langchain4j-easy-rag:0.18.0")
+
+//    Jackson
+    implementation("io.quarkus:quarkus-rest-jackson")
+
+//    Lombok
+    compileOnly("org.projectlombok:lombok:${lombokVersion}")
+    annotationProcessor("org.projectlombok:lombok:${lombokVersion}")
+
+//    Swagger
+    implementation("io.quarkus:quarkus-smallrye-openapi")
+
     implementation("io.quarkus:quarkus-arc")
-    implementation("io.quarkus:quarkus-resteasy-reactive")
+    implementation("io.quarkus:quarkus-rest")
     testImplementation("io.quarkus:quarkus-junit5")
     testImplementation("io.rest-assured:rest-assured")
 }

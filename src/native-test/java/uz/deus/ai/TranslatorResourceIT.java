@@ -3,6 +3,6 @@ package uz.deus.ai;
 import io.quarkus.test.junit.QuarkusIntegrationTest;
 
 @QuarkusIntegrationTest
-class GreetingResourceIT extends GreetingResourceTest {
+class TranslatorResourceIT extends TranslatorResourceTest {
     // Execute the same tests but in packaged mode.
 }
